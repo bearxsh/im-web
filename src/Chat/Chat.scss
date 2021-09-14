@@ -45,6 +45,7 @@
 
   & .chat-body {
     height: 300px;
+    overflow-y: auto;
 
     & .message-wrap {
       display: flex;
@@ -81,6 +82,7 @@
     height: 150px;
     background: white;
     border-top: 1px solid #e7e7e7;
+    padding: 20px;
 
     & .text {
       width: 100%;
