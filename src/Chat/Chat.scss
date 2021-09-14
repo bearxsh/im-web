@@ -56,6 +56,23 @@
         margin-left: 10px;
         background: white;
         padding: 10px;
+        max-width: 300px;
+      }
+    }
+
+    & .message-wrap-right {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 20px;
+      margin-top: 10px;
+      align-items: center;
+
+      & .message {
+        margin-right: 10px;
+        background: #5cadff;
+        padding: 10px;
+        max-width: 300px;
+        color: white;
       }
     }
   }

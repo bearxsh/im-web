@@ -38,6 +38,10 @@ function Chat() {
                         <img src={avatar} className="avatar" alt="avatar"/>
                         <div className="message">一起去爬山吧</div>
                     </div>
+                    <div className="message-wrap-right">
+                        <div className="message">不去</div>
+                        <img src={avatar} className="avatar" alt="avatar"/>
+                    </div>
                 </div>
                 <div className="chat-bottom">
                     <textarea className="text"/>
