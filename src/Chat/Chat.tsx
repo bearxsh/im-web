@@ -33,9 +33,14 @@ function Chat() {
             </div>
             <div className="chat">
                 <div className="chat-name"><div>张三</div></div>
-                <div className="chat-body"></div>
+                <div className="chat-body">
+                    <div className="message-wrap">
+                        <img src={avatar} className="avatar" alt="avatar"/>
+                        <div className="message">一起去爬山吧</div>
+                    </div>
+                </div>
                 <div className="chat-bottom">
-                    <textarea className="text"></textarea>
+                    <textarea className="text"/>
                 </div>
             </div>
         </div>

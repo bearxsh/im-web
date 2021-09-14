@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
 }
 
 .message-list {
@@ -44,6 +45,19 @@
 
   & .chat-body {
     height: 300px;
+
+    & .message-wrap {
+      display: flex;
+      margin-left: 20px;
+      margin-top: 10px;
+      align-items: center;
+
+      & .message {
+        margin-left: 10px;
+        background: white;
+        padding: 10px;
+      }
+    }
   }
 
   & .chat-bottom {
