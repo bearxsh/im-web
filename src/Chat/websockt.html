@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    let webSocket = new WebSocket("ws://localhost:6600");
+    webSocket.onopen = () => {
+        console.log("连接成功");
+    };
+    webSocket.onerror = (e) => {
+        console.log("出错！");
+    };
+    webSocket.onclose = (e) => {
+        console.log("连接关闭！")
+    };
+    webSocket.onmessage = (e) => {
+        console.log("收到一条消息：" + e.data);
+    }
+    //webSocket.send('{"type":"ONLINE","name":"zhangsan"}');
+    //webSocket.send('{"type":"ONLINE","name":"lisi"}');
+    //webSocket.send('{"type":"SEND","from":"lisi","to":"zhangsan","data":"十五的月亮十六圆"}');
+</script>
+<body>
+
+</body>
+</html>
