@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="test.js"></script>
+<script>
+    var options = {
+        SDKAppID: 1400574581
+    };
+    var tim = TIM.create(options);
+    tim.setLogLevel(0);
+    let onSdkReady = function(event) {
+        let message = tim.createTextMessage({ to: 'user1', conversationType: 'C2C', payload: { text: 'Hello world!' }});
+        console.log("发送结果" ,tim.sendMessage(message));
+        console.log("范德萨发送到")
+    };
+    tim.on(TIM.EVENT.SDK_READY, onSdkReady);
+
+    let promise = tim.login({userID: 'zhangsan', userSig: 'eJyrVgrxCdZLrSjILEpVsjIz0AHzy1KLlKyUjPQMlCD84pTsxIKCzBQlK0MTAwNTcxNTC0OITGZKal5JZlomWENVRmJeenFiHkxXZjpQ0DwwKMg-2Dkt19Ul0yzbKMTXwC0gQDsrJ83f1N3cz6ui2LnK2CjcM9jUPN0WqrEkMxfoGEMzYyNjCwsjQ9NaAOqDMGU_'});
+    promise.then(function(imResponse) {
+        console.log(imResponse.data); // 登录成功
+        if (imResponse.data.repeatLogin === true) {
+            // 标识账号已登录，本次登录操作为重复登录。v2.5.1 起支持
+            console.log(imResponse.data.errorInfo);
+        }
+    }).catch(function(imError) {
+        console.warn('login error:', imError); // 登录失败的相关信息
+    });
+
+
+</script>
+<body>
+
+
+</body>
+</html>
