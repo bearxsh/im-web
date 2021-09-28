@@ -2,11 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Chat from './Chat/Chat';
+import Login from './Login/Login';
 import reportWebVitals from './reportWebVitals';
-
+const {BrowserRouter, Switch, Route, Link}  = require("react-router-dom");
 ReactDOM.render(
   <React.StrictMode>
-    <Chat />
+      <BrowserRouter>
+          {/*<h1>Bearxsh</h1>*/}
+          <Switch>
+              <Route path="/login">
+                  <Login/>
+              </Route>
+              <Route path="/chat">
+                  <Chat/>
+              </Route>
+              <Route>
+                  <span>page not found!</span>
+              </Route>
+          </Switch>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

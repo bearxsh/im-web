@@ -7,7 +7,7 @@
 <script src="test.js"></script>
 <script>
     var options = {
-        SDKAppID: 1400574581
+        SDKAppID: 1400574582
     };
     var tim = TIM.create(options);
     tim.setLogLevel(0);
@@ -18,7 +18,7 @@
     };
     tim.on(TIM.EVENT.SDK_READY, onSdkReady);
 
-    let promise = tim.login({userID: 'zhangsan', userSig: 'eJyrVgrxCdZLrSjILEpVsjIz0AHzy1KLlKyUjPQMlCD84pTsxIKCzBQlK0MTAwNTcxNTC0OITGZKal5JZlomWENVRmJeenFiHkxXZjpQ0DwwKMg-2Dkt19Ul0yzbKMTXwC0gQDsrJ83f1N3cz6ui2LnK2CjcM9jUPN0WqrEkMxfoGEMzYyNjCwsjQ9NaAOqDMGU_'});
+    let promise = tim.login({userID: 'zhangsan', userSig: 'eJw1jssKwjAUBf8layl5tFEDLlyIFQpVLFqXwcT0VgyXpohU-HdDq8szh4F5k6o4JvaF0FmihKR0NpKn7YgiPKFk2sHcNSIYolhKaTZPswWfHjDW93CDURga7V3Q-m*BixAl9WnZFmeJ67pm*5KjuAwBWdjB1rmiOW3ya2Vy3R5WP7GHR8xhUnCxjFHs8wVYljHX'});
     promise.then(function(imResponse) {
         console.log(imResponse.data); // 登录成功
         if (imResponse.data.repeatLogin === true) {

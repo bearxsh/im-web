@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Chat.scss";
 import avatar from "./avatar.png";
+import instance from "../axios-config";
 
 
 function Chat() {
+    useEffect(() => {
+        instance.get("/area/areas/1/2")
+            .then(function (response: any) {
+                console.log(response.data);
+            })
+            .catch(function (error: any) {
+                console.log("出现错误！");
+                console.log(error);
+            })
+            .then(function () {
+                //console.log("我总是被执行！")
+            })
+    });
     return (
         <div className="wrap">
             <div className="menu">
@@ -32,7 +46,9 @@ function Chat() {
                 </div>
             </div>
             <div className="chat">
-                <div className="chat-name"><div>张三</div></div>
+                <div className="chat-name">
+                    <div>张三</div>
+                </div>
                 <div className="chat-body">
                     <div className="message-wrap">
                         <img src={avatar} className="avatar" alt="avatar"/>
