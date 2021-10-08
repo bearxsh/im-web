@@ -1,16 +1,17 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 import './Login.scss';
 import github from "../github.svg";
 
 function Login() {
-    function login() {
-        window.location.href = "https://github.com/login/oauth/authorize?client_id=02de8a8864665033cc15";
+    function getWxQr() {
+        return 'https://www.bearxsh.com/wx/qr?id=' + uuidv4().replaceAll('-', '');
     }
    return (
        <div className="login-wrap">
-           <div className="login-header">第三方登录</div>
-           <img src={github} className="github" alt="github" onClick={login}/>
-           <div className="login-footer">Login with Github</div>
+           <div className="login-header">微信扫一扫登录</div>
+           <img src={getWxQr()} className="login-photo" alt="qr"/>
+           <div className="login-footer">Login with WeChat</div>
        </div>
    );
 }
