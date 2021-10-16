@@ -5,8 +5,6 @@ const instance = axios.create({
 });
 
 instance.interceptors.response.use(response => {
-    console.log("响应");
-    console.log(response);
     if (response.data.code === 201) {
         console.log("登录成功！");
         window.location.href = 'chat';
